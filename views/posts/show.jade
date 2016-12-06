@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+  .container
+    h1.page-header= post.title
+    p
+      b 도시 #{post.country}
+      | 
+      span at #{moment(post.createdAt).format('YYYY-MM-DD HH:mm:ss')} 
+      | 
+      | (조회수 #{post.read})
+    p.well(style='white-space:pre;')= post.address
+    p.well(style='white-space:pre;')= post.price
+    p.well(style='white-space:pre;')= post.service
+    p.well(style='white-space:pre;')= post.rule
+    p.well(style='white-space:pre;')= post.content
+    
+    a.btn.btn-default(href='/posts') 목록
