@@ -13,7 +13,10 @@ var configAuth = require('./config/auth');
 
 var routes = require('./routes/index'),
     users = require('./routes/users'),
-    posts = require('./routes/posts');
+    reserve = require('./routes/reserve'),
+    reservation = require('./routes/reservation'),
+    hosting = require('./routes/hosting'),
+    hosts = require('./routes/hosts');
 
 var routeAuth = require('./routes/auth');
 
@@ -67,7 +70,10 @@ module.exports = function(app, io) {
 
   app.use('/', routes);
   app.use('/users', users);
-  app.use('/posts', posts)
+  app.use('/reserve', reserve);
+  app.use('/hosts', hosts);
+  app.use('/hosting', hosting);
+  app.use('/reservation', reservation);
   routeAuth(app, passport);
 
   // catch 404 and forward to error handler

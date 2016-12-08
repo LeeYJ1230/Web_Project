@@ -17,10 +17,19 @@ a {
   -moz-background-size: 100%;
   -o-background-size: 100%;
   background-size: 100%;
-  min-height: 20em;
+  min-height: 35em;
   color: #fff;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
 }
+
+.imagin {
+  margin-left: 1em;
+  background: url("/images/hosting.jpg") no-repeat left top;
+  background-size: 100%;
+  //height: 30em;
+  //width: 50em;
+  min-height: 12em;
+  min-width: 20em; }
 
 .form-actions {
   padding: 19px 20px 20px;

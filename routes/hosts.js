@@ -1,5 +1,5 @@
 var express = require('express'),
-  Post = require('../models/Post');
+  Host = require('../models/Host');
 var router = express.Router();
 
 function needAuth(req, res, next) {
@@ -13,51 +13,52 @@ function needAuth(req, res, next) {
 
 //게시판의 홈화면을 보여준다.
 router.get('/', needAuth, function (req, res, next) {
-  Post.find({}, function (err, posts) {
+  Host.find({}, function (err, hosts) {
     if (err) {
       return next(err);
     }
-    res.render('posts/index', { posts: posts });
+    res.render('hosts/index', { hosts: hosts });
   });
 });
 
 //글쓰기
 router.get('/new', function (req, res, next) {
-  Post.find({}, function (err, posts) {
-    res.render('posts/edit', { post: {} });
+  Host.find({}, function (err, hosts) {
+    res.render('hosts/edit', { host: {} });
   });
 });
 
 //상세보기
 router.get('/:id', function (req, res, next) {
-  Post.findById(req.params.id, function (err, post) {
+  Host.findById(req.params.id, function (err, host) {
     if (err) {
       return next(err);
     }
-    post.save(function (err) {
+    host.save(function (err) {
       if (err) {
         return next(err);
       }
     });
-    res.render('posts/show', { post: post });
+    res.render('hosts/show', { host: host });
     //조회수를 세어준다.
-    post.read = post.read + 1;
+    host.read = host.read + 1;
   });
 });
 
 //글수정
 router.get('/:id/edit', function (req, res, next) {
-  Post.findById(req.params.id, function (err, post) {
+  Host.findById(req.params.id, function (err, host) {
     if (err) {
       return next(err);
     }
-    res.render('posts/edit', { post: post });
+    res.render('hosts/edit', { host: host });
   });
 });
 
 //글을 쓸 경우 데이터의 값을 받는다.
 router.post('/', function (req, res, next) {
-  var newPost = new Post({
+  var newHost = new Host({
+    email: req.body.email,
     title: req.body.title,
     content: req.body.content,
     country : req.body.country,
@@ -67,54 +68,55 @@ router.post('/', function (req, res, next) {
     rule : req.body.rule,
   });
 
-  newPost.save(function (err) {
+  newHost.save(function (err) {
     if (err) {
       return next(err);
     } else {
-      res.redirect('/posts');
+      res.redirect('/hosts');
     }
   });
 });
 
 //조건을 확인해 게시글을 수정한다.
 router.put('/:id', function (req, res, next) {
-  Post.findById({ _id: req.params.id }, function (err, post) {
+  Host.findById({ _id: req.params.id }, function (err, host) {
     if (err) {
       return next(err);
     }
 
-    if (!post) {
+    if (!host) {
       return res.redirect('back');
     }
 
-    //if (post.password !== req.body.password) {
+    //if (host.password !== req.body.password) {
     //  return res.redirect('back');
     //}
 
-    post.title =  req.body.title;
-    postcontent = req.body.content;
-    postcountry = req.body.country;
-    postaddress = req.body.address;
-    postprice = req.body.price;
-    postservice = req.body.service;
-    postrule = req.body.rule;
+    host.email = req.body.email;
+    host.title =  req.body.title;
+    host.content = req.body.content;
+    host.country = req.body.country;
+    host.address = req.body.address;
+    host.price = req.body.price;
+    host.service = req.body.service;
+    host.rule = req.body.rule;
 
-    post.save(function (err) {
+    host.save(function (err) {
       if (err) {
         return next(err);
       }
-      res.redirect('/posts');
+      res.redirect('/hosts');
     });
   });
 });
 
 //글을 삭제한다.
 router.delete('/:id', function (req, res, next) {
-  Post.findOneAndRemove({ _id: req.params.id }, function (err) {
+  Host.findOneAndRemove({ _id: req.params.id }, function (err) {
     if (err) {
       return next(err);
     }
-    res.redirect('/posts');
+    res.redirect('/hosts');
   });
 });
 

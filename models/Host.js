@@ -16,6 +16,6 @@ var schema = new Schema({
   toObject: {virtuals: true}
 });
 
-var Post = mongoose.model('Post', schema);
+var Host = mongoose.model('Host', schema);
 
-module.exports = Post;
+module.exports = Host;

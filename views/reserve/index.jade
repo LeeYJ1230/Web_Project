@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+  .container
+    h1.page-header Reservation
+    table.table.table-bordered
+      thead
+        tr
+          th 제목
+          th 도시
+          th 글쓴이
+          th 날짜
+          th 조회수
+      tbody
+        each host in hosts
+          tr
+            td
+              a(href='/hosts/#{host.id}')= host.title
+            td= host.country
+            td= host.email
+            td= moment(host.createdAt).format('YYYY-MM-DD HH:mm:ss')
+            td= host.read
+    form#deleteForm(style='display:none', method="POST")  

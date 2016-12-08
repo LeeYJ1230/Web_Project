@@ -1,7 +1,7 @@
 module.exports = function(app, passport) {
-  app.post('/signin', passport.authenticate('local-signin', {
-    successRedirect : '/re', // redirect to the secure profile section
-    failureRedirect : '/signin', // redirect back to the signup page if there is an error
+  app.post('/Login', passport.authenticate('local-Login', {
+    successRedirect : '/', // redirect to the secure profile section
+    failureRedirect : '/Login', // redirect back to the signup page if there is an error
     failureFlash : true // allow flash messages
   }));
 
@@ -11,7 +11,7 @@ module.exports = function(app, passport) {
 
   app.get('/auth/facebook/callback',
     passport.authenticate('facebook', {
-      failureRedirect : '/signin',
+      failureRedirect : '/Login',
       failureFlash : true // allow flash messages
     }),
     function(req, res, next) {

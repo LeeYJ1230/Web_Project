@@ -1,9 +1,9 @@
 {
-  "name": "ex01",
+  "name": "Web_Project",
   "version": "0.0.0",
-  "homepage": "https://github.com/dongseop/mju-class-wp",
+  "homepage": "https://github.com/LeeYJ1230/Web_Project",
   "authors": [
-    "Dongseop Kwon <dongseop@gmail.com>"
+    "YeonJu Lee <dw03236@naver.com>"
   ],
   "license": "MIT",
   "ignore": [

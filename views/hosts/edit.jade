@@ -1,0 +1,32 @@
+extends ../layout
+
+block content
+  .container
+    if host.id
+      h1.page-header 글수정
+    else
+      h1.page-header 숙소정보 입력
+
+    form(action = (host.id) ? "/hosts/#{host.id}?_method=PUT" : "/hosts", method='POST')
+      .form-group
+        label(for='title') Title
+        input.form-control(type='text', id='title', name='title', placeholder='제목을 입력하세요.', value=host.title)
+        .form-group
+        label(for='country') Country
+        input.form-control(type='country', id='country', name='country', placeholder='도시를 입력하세요.', value=host.country)
+        label(for='address') Address
+        input.form-control(type='address', id='address', name='address', placeholder='상세한 주소지를 입력하세요.', value=host.address)
+        label(for='price') Price
+        input.form-control(type='price', id='price', name='price', placeholder='숙소 요금을 입력하세요.', value=host.price)
+        label(for='service') Service
+        input.form-control(type='service', id='service', name='service', placeholder='편의시설을 입력하세요.', value=host.service)
+        label(for='rule') Rule
+        input.form-control(type='rule', id='rule', name='rule', placeholder='이용규칙을 입력하세요.', value=host.rule)
+      .form-group
+        label(for='content') Content
+        textarea.form-control(id='content', rows='10', name='content', placeholder='설명을 입력하세요.')= host.content
+
+      div.form-actions
+        a.btn.btn-default(href='javascript:window.history.back();') 뒤로 
+        | 
+        button.btn.btn-primary(type='submit') 호스팅하기
