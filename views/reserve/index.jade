@@ -15,7 +15,7 @@ block content
         each host in hosts
           tr
             td
-              a(href='/hosts/#{host.id}')= host.title
+              a(href='/reserve/#{host.id}')= host.title
             td= host.country
             td= host.email
             td= moment(host.createdAt).format('YYYY-MM-DD HH:mm:ss')

@@ -17,6 +17,8 @@
       ul.nav.navbar-nav.navbar-right
         if (currentUser) 
           li
+            a(href='/message') Message
+          li
             a(href='/users') Users
           li
             a(href='/users/#{currentUser._id}') Profile
