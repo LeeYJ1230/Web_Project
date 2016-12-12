@@ -14,11 +14,12 @@ var configAuth = require('./config/auth');
 var routes = require('./routes/index'),
     users = require('./routes/users'),
     reserve = require('./routes/reserve'),
+    apply = require('./routes/apply'),
     reservation = require('./routes/reservation'),
     hosting = require('./routes/hosting'),
+    hosting_f = require('./routes/hosting_f'),
     hosts = require('./routes/hosts'),
     message = require('./routes/message'),
-    apply = require('./routes/apply'),
     m_host = require('./routes/m_host');
 
 var routeAuth = require('./routes/auth');
@@ -74,11 +75,12 @@ module.exports = function(app, io) {
   app.use('/', routes);
   app.use('/users', users);
   app.use('/reserve', reserve);
+  app.use('/apply', apply);
+  app.use('/reservation', reservation);
   app.use('/hosts', hosts);
   app.use('/hosting', hosting);
-  app.use('/reservation', reservation);
+  app.use('/hosting_f', hosting_f);
   app.use('/message', message);
-  app.use('/apply', apply);
   app.use('/m_host', m_host);
   routeAuth(app, passport);
 

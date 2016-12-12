@@ -1,4 +1,5 @@
-var express = require('express');
+//예약하기 위한 게시판 페이지
+var express = require('express'),
     Host = require('../models/Host');
 var router = express.Router();
 

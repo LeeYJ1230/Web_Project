@@ -21,16 +21,6 @@ a {
   color: #fff;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
 }
-//height: 30em;
-//width: 50em;
-
-.imagin {
-  text-align: left;
-  margin-left: 1em;
-  background: url("/images/hosting.jpg") no-repeat left top;
-  background-size: 100%;
-  min-height: 12em;
-  min-width: 20em; }
 
 .introduce { 
   text-align: left;
@@ -38,7 +28,7 @@ a {
   background: url("/images/introduce.jpg") no-repeat left top;
   background-size: 100%;
   min-height: 24em;
-  min-width: 40em; }
+  min-width: 35em; }
 
 .hosting {
   text-align: left; 
@@ -48,20 +38,28 @@ a {
   min-height: 35em;
   min-width: 25em; }
 
-.success { 
-  text-align: left;
-  background: url("/images/success.jpg") no-repeat left top;
+.hosting_f {
+  text-align: left; 
+  margin-left: 1em;
+  background: url("/images/hosting_f.jpg") no-repeat left top;
   background-size: 100%;
   min-height: 35em;
-  min-width: 45em; }
+  min-width: 25em; }
 
 .reserve { 
   text-align: left;
   margin-left: 1em;
   background: url("/images/reserve.jpg") no-repeat left top;
   background-size: 100%;
-  min-height: 20em;
-  min-width: 30em; }
+  min-height: 30em;
+  min-width: 38em; }
+
+.reserve_f { 
+  text-align: left;
+  background: url("/images/reserve_f.jpg") no-repeat left top;
+  background-size: 100%;
+  min-height: 30em;
+  min-width: 35em; }
 
 .form-actions {
   padding: 19px 20px 20px;

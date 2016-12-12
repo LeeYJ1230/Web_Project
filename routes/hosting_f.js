@@ -1,9 +1,9 @@
-//예약이 완료되었다.
+//호스팅 완료
 var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
-  res.render('reserve/reservation');
+  res.render('hosts/hosting_f');
 });
 
 router.get('/Login', function(req, res, next) {
