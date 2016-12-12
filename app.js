@@ -18,7 +18,8 @@ var routes = require('./routes/index'),
     hosting = require('./routes/hosting'),
     hosts = require('./routes/hosts'),
     message = require('./routes/message'),
-    apply = require('./routes/apply');
+    apply = require('./routes/apply'),
+    m_host = require('./routes/m_host');
 
 var routeAuth = require('./routes/auth');
 
@@ -78,6 +79,7 @@ module.exports = function(app, io) {
   app.use('/reservation', reservation);
   app.use('/message', message);
   app.use('/apply', apply);
+  app.use('/m_host', m_host);
   routeAuth(app, passport);
 
   // catch 404 and forward to error handler

@@ -17,7 +17,7 @@ block content
             td
               a(href='/reserve/#{host.id}')= host.title
             td= host.country
-            td= host.email
+            td= host.id
             td= moment(host.createdAt).format('YYYY-MM-DD HH:mm:ss')
             td= host.read
     form#deleteForm(style='display:none', method="POST")  

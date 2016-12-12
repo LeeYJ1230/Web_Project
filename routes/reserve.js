@@ -1,5 +1,5 @@
 var express = require('express');
-  Host = require('../models/Host');
+    Host = require('../models/Host');
 var router = express.Router();
 
 function needAuth(req, res, next) {

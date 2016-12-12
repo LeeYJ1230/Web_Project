@@ -80,7 +80,7 @@ a {
   min-height: 12em;
   min-width: 20em; }
 
-.introduce { 
+.introduce {
   text-align: left;
   margin-left: 1em;
   background: url("/images/introduce.jpg") no-repeat left top;
@@ -89,28 +89,27 @@ a {
   min-width: 40em; }
 
 .hosting {
-  text-align: left; 
+  text-align: left;
   margin-left: 1em;
   background: url("/images/hosting.jpg") no-repeat left top;
   background-size: 100%;
-  min-height: 24em;
-  min-width: 40em; }
+  min-height: 35em;
+  min-width: 25em; }
 
-.success { 
+.success {
   text-align: left;
-  margin-left: 1em;
   background: url("/images/success.jpg") no-repeat left top;
   background-size: 100%;
-  min-height: 24em;
-  min-width: 40em; }
+  min-height: 35em;
+  min-width: 45em; }
 
-.reserve { 
+.reserve {
   text-align: left;
   margin-left: 1em;
   background: url("/images/reserve.jpg") no-repeat left top;
   background-size: 100%;
   min-height: 20em;
-  min-width: 30em;  }
+  min-width: 30em; }
 
 .form-actions {
   padding: 19px 20px 20px;

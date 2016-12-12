@@ -1,13 +1,22 @@
 extends ../layout
 
-block hero-unit
-  .hosting
-
 block content
   .container
     .row
       .col-md-6
+        .hosting
+      .col-md-6
         h3 호스트가 되어 사용자의 꿈을 실현하세요.
         p 지역에 온 사람들을 환영해주고 이들이 집처럼 편안함을 느낄 수 있도록 도와주세요.
-        a.btn.btn-primary(href='/hosts') 호스팅하기
+        br
+        h4 장점
+        b 부가 수입
+        h5 집 수리에서 꿈꿔온 여행까지, 호스팅 수입으로 진짜 하고 싶은 일을 하세요.
+        br
+        b 호스트 지원
+        h5 유용한 팁과 필요한 도구를 지원 받고 전 세계 다른 호스트와 교류하세요.
+        br
+        b 유연성
+        h5 요금, 호스팅 시기 및 빈도 모두 호스트가 전적으로 결정합니다.
+        a.btn.btn-primary.right(href='/hosts') 호스팅하기
   

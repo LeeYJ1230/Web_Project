@@ -1,6 +1,5 @@
 var express = require('express'),
   Host = require('../models/Host');
-  User = require('../models/User');
 var router = express.Router();
 
 function needAuth(req, res, next) {
@@ -18,14 +17,14 @@ router.get('/', needAuth, function (req, res, next) {
     if (err) {
       return next(err);
     }
-    res.render('hosts/index', { hosts: hosts });
+    res.render('m_host/index', { hosts: hosts });
   });
 });
 
 //글쓰기
 router.get('/new', function (req, res, next) {
   Host.find({}, function (err, hosts) {
-    res.render('hosts/edit', { host: {} });
+    res.render('m_host/edit', { host: {} });
   });
 });
 
@@ -40,7 +39,7 @@ router.get('/:id', function (req, res, next) {
         return next(err);
       }
     });
-    res.render('hosts/show', { host: host });
+    res.render('m_host/show', { host: host });
     //조회수를 세어준다.
     host.read = host.read + 1;
   });
@@ -52,7 +51,7 @@ router.get('/:id/edit', function (req, res, next) {
     if (err) {
       return next(err);
     }
-    res.render('hosts/edit', { host: host });
+    res.render('m_host/edit', { host: host });
   });
 });
 
@@ -73,7 +72,7 @@ router.post('/', function (req, res, next) {
     if (err) {
       return next(err);
     } else {
-      res.redirect('/hosts');
+      res.redirect('/m_host');
     }
   });
 });
@@ -106,7 +105,7 @@ router.put('/:id', function (req, res, next) {
       if (err) {
         return next(err);
       }
-      res.redirect('/hosts');
+      res.redirect('/m_host');
     });
   });
 });
@@ -117,7 +116,7 @@ router.delete('/:id', function (req, res, next) {
     if (err) {
       return next(err);
     }
-    res.redirect('/hosts');
+    res.redirect('/m_host');
   });
 });
 

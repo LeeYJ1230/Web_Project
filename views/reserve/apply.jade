@@ -1,11 +1,25 @@
 extends ../layout
 
-block hero-unit
-  .reserve
-
 block content
   .container
     .row
       .col-md-6
-        h3 예약 정보들 기입
+        .reserve
+      .col-sm-4
+        .row
+          h3 예약 정보를 기입하세요.
+          br
+        .row
+          h4 날짜 : 
+          form(action="action_page.php")
+          input.form-control(type="date" name="reday")
+          br
+        .row
+          h4 예약 인원 : 
+            select(num='category' name="number")
+              -for(var i = 1; i<10; i++){
+                option(value='#{i}') #{i}명   
+              -}
+                option(value='#8') 8명 이상
+          br
         a.btn.btn-primary(href='/reservation') 예약하기
