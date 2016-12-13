@@ -4,8 +4,6 @@ block content
   .container
     if host.id
       h1.page-header 글수정
-    else
-      h1.page-header 숙소정보 입력
 
     form(action = (host.id) ? "/hosts/#{host.id}?_method=PUT" : "/hosts", method='POST')
       .form-group
@@ -29,4 +27,4 @@ block content
       div.form-actions
         a.btn.btn-default(href='javascript:window.history.back();') 뒤로 
         | 
-        button.btn.btn-primary(type='submit') 호스팅하기
+        button.btn.btn-primary(type='submit') 수정하기

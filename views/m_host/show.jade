@@ -4,20 +4,16 @@ block content
   .container
     h1.page-header= host.title
     p
-      b (도시 : #{host.country})
+      b 도시 #{host.country}
       | 
       span at #{moment(host.createdAt).format('YYYY-MM-DD HH:mm:ss')} 
       | 
-      | (조회수 #{host.read})
-    b 상세주소 
+      | (글쓴이 #{host.id} ,
+      | (조회수 #{host.read}))
     p.well(style='white-space:pre;')= host.address
-    b 가격
     p.well(style='white-space:pre;')= host.price
-    b 서비스
     p.well(style='white-space:pre;')= host.service
-    b 이용규칙
     p.well(style='white-space:pre;')= host.rule
-    b 내용
     p.well(style='white-space:pre;')= host.content
-
-    a.btn.btn-default(href='/hosts') 목록
+    
+    a.btn.btn-default(href='/m_host') 목록

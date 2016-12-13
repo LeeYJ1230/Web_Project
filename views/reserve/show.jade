@@ -2,20 +2,29 @@ extends ../layout
 
 block content
   .container
-    h1.page-header= host.title
-    p
-      b 도시 #{host.country}
-      | 
-      span at #{moment(host.createdAt).format('YYYY-MM-DD HH:mm:ss')} 
-      | 
-      | (글쓴이 #{host.name} ,
-      | (조회수 #{host.read}))
-    p.well(style='white-space:pre;')= host.address
-    p.well(style='white-space:pre;')= host.price
-    p.well(style='white-space:pre;')= host.service
-    p.well(style='white-space:pre;')= host.rule
-    p.well(style='white-space:pre;')= host.content
-    
-    p 마음에 드시나요??
-    a.btn.btn-default(href='/apply') 예약하기
-    a.btn.btn-default(href='/reserve') 목록
+    .row-md-6
+      .col-md-6
+        h1.page-header= host.title
+        p
+          b 도시 #{host.country}
+          | 
+          span at #{moment(host.createdAt).format('YYYY-MM-DD HH:mm:ss')} 
+          | 
+          | (글쓴이 #{host.name} ,
+          | (조회수 #{host.read}))
+        p.well(style='white-space:pre;')= host.address
+        p.well(style='white-space:pre;')= host.price
+        p.well(style='white-space:pre;')= host.service
+        p.well(style='white-space:pre;')= host.rule
+        p.well(style='white-space:pre;')= host.content
+        br
+        .row-md-5
+          .col-md-5
+            p 마음에 드시나요??
+          .col-md-5
+            a.btn.btn-default(href='/apply') 예약하기
+            a.btn.btn-default(href='/reserve') 목록
+          br
+      .col-md-6
+        .row-md-4
+          include ./comment

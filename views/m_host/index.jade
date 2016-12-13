@@ -10,17 +10,17 @@ block content
           th 도시
           th 글쓴이
           th 날짜
-          th 
+          th 조회수
       tbody
         each host in hosts
           tr
             td
-              a(href='/hosts/#{host.id}')= host.title
+              a(href='/m_host/#{host.id}')= host.title
             td= host.country
             td= host.id
             td= moment(host.createdAt).format('YYYY-MM-DD HH:mm:ss')
             td
-              a.btn.btn-xs.btn-default(href='/hosts/#{host.id}/edit') 수정
+              a.btn.btn-xs.btn-default(href='/m_host/#{host.id}/edit') 수정
               | 
               a.btn.btn-xs.btn-default(data-id=host.id, class='delete') 삭제
 
@@ -30,7 +30,7 @@ block content
       $(".delete").click(function(e) {
         var id = $(e.currentTarget).data('id');
         if (confirm('정말 삭제하시겠습니까?')) {
-          $("#deleteForm").attr('action', "/hosts/" + id + "?_method=DELETE").submit();          
+          $("#deleteForm").attr('action', "/m_host/" + id + "?_method=DELETE").submit();          
         }
         return false;
       });

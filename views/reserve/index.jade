@@ -3,21 +3,30 @@ extends ../layout
 block content
   .container
     h1.page-header Reservation
-    table.table.table-bordered
-      thead
-        tr
-          th 제목
-          th 도시
-          th 글쓴이
-          th 날짜
-          th 조회수
-      tbody
-        each host in hosts
+    .col-md-8
+      table.table.table-bordered
+        thead
           tr
-            td
-              a(href='/reserve/#{host.id}')= host.title
-            td= host.country
-            td= host.id
-            td= moment(host.createdAt).format('YYYY-MM-DD HH:mm:ss')
-            td= host.read
-    form#deleteForm(style='display:none', method="POST")  
+            th 제목
+            th 도시
+            th 글쓴이
+            th 날짜
+            th 조회수
+        tbody
+          each host in hosts
+            tr
+              td
+                a(href='/reserve/#{host.id}')= host.title
+              td= host.country
+              td= host.id
+              td= moment(host.createdAt).format('YYYY-MM-DD HH:mm:ss')
+              td= host.read
+     .col-md-4.side
+        h3 분류
+        section.options.category
+        a(data-value='인천').option 인천
+        a(data-value='서울').option 서울
+        a(data-value='광주').option 광주
+        a(data-value='대구').option 대구
+        a(data-value='부산').option 부산
+        a(data-value='all').all 전체
